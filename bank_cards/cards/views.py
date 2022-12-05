@@ -1,9 +1,8 @@
 from django.db.models import Q
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView, DeleteView, UpdateView
+from django.views.generic import DetailView, ListView, DeleteView
 
-from bank_cards.cards.forms import CardForm
 from bank_cards.cards.models import Card
 
 
