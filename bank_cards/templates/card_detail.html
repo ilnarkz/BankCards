@@ -20,11 +20,10 @@
                     {% if card.status != 'Просрочена' %}
                     <form action="{% url 'cards:update_status' card.id %}" method="post">
                         {% csrf_token %}
-                        <button type="button">
                             {% if card.status == 'Активирована' %}
-                            Деактивировать
+                            <button class="btn btn-primary" type="submit">Деактивировать</button>
                             {% else %}
-                            Активировать
+                            <button class="btn btn-primary" type="submit">Активировать</button>
                             {% endif %}</button>
                     </form>
                     {% endif %}

@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, DeleteView, UpdateView
 
+from bank_cards.cards.forms import CardForm
 from bank_cards.cards.models import Card
 
 
@@ -32,11 +33,13 @@ class CardDeleteView(DeleteView):
 
 class CardUpdateView(UpdateView):
     model = Card
+    form_class = CardForm
+    template_name = 'card_form.html'
     success_url = reverse_lazy('cards:card_detail')
 
-    def change_status(self):
+    def change_status(self, pk):
         if self.request.method == "POST":
-            card = Card.objects.filter(id=self.id)
+            card = Card.objects.filter(pk=pk)
             if card.status == 'Активирована':
                 card.status = 'Деактивирована'
                 card.save()
