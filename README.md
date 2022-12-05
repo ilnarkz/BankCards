@@ -1,6 +1,6 @@
 # BankCards
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/9530a2b41aaf6c83a67f/maintainability)](https://codeclimate.com/github/ilnarkz/BankCards/maintainability) [![bank_card](https://github.com/ilnarkz/BankCards/actions/workflows/ci.yaml/badge.svg)](https://github.com/ilnarkz/BankCards/actions/workflows/ci.yaml)
+[![bank_card](https://github.com/ilnarkz/BankCards/actions/workflows/ci.yaml/badge.svg)](https://github.com/ilnarkz/BankCards/actions/workflows/ci.yaml)
 
 BankCard - это веб-приложение для генерации, просмотра деталей и удаления карт.
 
