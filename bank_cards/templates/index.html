@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container border border-info px-5 pb-5">
+    <h1 class="mt-5">{% translate "Hello from Hexlet" %}</h1>
+    <p class="lead">{% translate "Practical programming courses" %}</p>
+    <hr>
+    <a class="btn btn-info btn-lg" href="https://ru.hexlet.io">{% translate "Learn more" %}</a>
+</div>
+{% endblock %}

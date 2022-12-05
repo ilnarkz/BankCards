@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block header %}
+Детали карты
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-primary text-black">
+        <h2>Серия: {{ card.card_series }} Номер: {{ card.card_number }}</h2>
+    </div>
+    <div class="card-body bg-light">
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col">
+                    Статус
+                </div>
+                <div class="col">
+                    {{ card.status }}
+                    {% if card.status != 'Просрочена' %}
+                    <form action="{% url 'cards:update_status' card.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="button">
+                            {% if card.status == 'Активирована' %}
+                            Деактивировать
+                            {% else %}
+                            Активировать
+                            {% endif %}</button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row align-items-start">
+                <div class="col">
+                    Дата выпуска карты:
+                </div>
+                <div class="col">
+                    {{ card.created_at|date:"d.m.Y H:i" }}
+                </div>
+            </div>
+            <div class="row align-items-start">
+                <div class="col">
+                    Дата окончания активности:
+                </div>
+                <div class="col">
+                    {{ card.get_end_date }}
+                </div>
+            </div>
+        </div>
+        {% endblock %}

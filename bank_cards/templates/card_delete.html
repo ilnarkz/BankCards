@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="my-4">Удаление карты</h1>
+<p>Вы действительно хотите удалить эту карту {{ card.card_series }} {{ card.card_number }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" value="Да, удалить">
+</form>
+{% endblock %}

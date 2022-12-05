@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block header %}
+Список карт
+{% endblock %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Серия карты</th>
+        <th>Номер карты</th>
+        <th></th>
+        <th>Дата выпуска карты</th>
+        <th>Дата окончания активности</th>
+        <th>Статус</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for card in card_list %}
+    <tr>
+        <td>{{ card.id }}</td>
+        <td>{{ card.card_series }}</td>
+        <td>{{ card.card_number }}</td>
+        <td><a href="{% url 'cards:card_detail' card.id %}">Детали</a></td>
+        <td>{{ card.created_at|date:"d.m.Y H:i" }}</td>
+        <td>{{ card.get_end_date }}</td>
+        <td>{{ card.status }}</td>
+        <td><a href="{% url 'cards:card_delete' card.id %}">Удалить</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

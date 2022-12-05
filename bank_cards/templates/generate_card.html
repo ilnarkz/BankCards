@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<form class="form" method="post">
+    <h1 class="my-4">Сгенерировать карту</h1>
+    {% csrf_token %}
+    {% bootstrap_form form layout='inline' %}
+    {% buttons %}
+    <button class="btn btn-primary" type="submit">Сгенерировать</button>
+    {% endbuttons %}
+</form>
+{% endblock content %}
