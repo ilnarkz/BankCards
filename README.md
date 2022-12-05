@@ -2,7 +2,7 @@
 
 [![bank_card](https://github.com/ilnarkz/BankCards/actions/workflows/ci.yaml/badge.svg)](https://github.com/ilnarkz/BankCards/actions/workflows/ci.yaml)
 
-BankCard - это веб-приложение для генерации, просмотра деталей и удаления карт.
+BankCard - это веб-приложение для генерации, активировантя/деактивирования, просмотра деталей и удаления карт.
 
 1. Установка
 1.1 Клонирование репозитория и установка зависимостей

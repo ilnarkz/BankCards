@@ -31,19 +31,10 @@ class CardDeleteView(DeleteView):
     success_url = reverse_lazy('cards:card_list')
 
 
-class CardUpdateView(UpdateView):
-    model = Card
-    form_class = CardForm
-    template_name = 'card_form.html'
-    success_url = reverse_lazy('cards:card_detail')
-
-    def change_status(self, pk):
-        if self.request.method == "POST":
-            card = Card.objects.filter(pk=pk)
-            if card.status == 'Активирована':
-                card.status = 'Деактивирована'
-                card.save()
-            elif card.status == 'Деактивирована':
-                card.status = 'Активирована'
-                card.save()
-        return redirect(self.success_url)
+def update_status(request, pk):
+    card = Card.objects.get(pk=pk)
+    if card.status == 'Активирована':
+        Card.objects.filter(pk=pk).update(status='Деактивирована')
+    elif card.status == 'Деактивирована':
+        Card.objects.filter(pk=pk).update(status='Активирована')
+    return redirect('cards:card_list')
