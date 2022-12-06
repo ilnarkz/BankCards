@@ -2,12 +2,12 @@
 
 [![bank_card](https://github.com/ilnarkz/BankCards/actions/workflows/ci.yaml/badge.svg)](https://github.com/ilnarkz/BankCards/actions/workflows/ci.yaml)
 
-BankCard - это веб-приложение для генерации, активировантя/деактивирования, просмотра деталей и удаления карт.
+BankCard - это веб-приложение для генерации, активирования/деактивирования, просмотра деталей и удаления карт.
 
 [BankCard on Railway](https://web-production-04b6.up.railway.app/)
 
-1. Установка
-1.1 Клонирование репозитория и установка зависимостей
+##1. Установка
+###1.1 Клонирование репозитория и установка зависимостей
 
 ```bash
 git clone https://github.com/ilnarkz/BankCards
@@ -21,20 +21,20 @@ make install
 ```
 
 
-1.2 Активация виртуального окружения
+###1.2 Активация виртуального окружения
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-2. Запуск утилиты
+##2. Запуск утилиты
 
 ```bash
 make start
 ```
 
-## Качество кода
+### Качество кода
 
 Для проверки качества кода используйте
 
