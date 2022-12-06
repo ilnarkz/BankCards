@@ -22,12 +22,12 @@ HOW_LONG_CHOICES = [
 
 def get_card_series():
     num = random.randint(1, 10000)
-    return str(num)
+    return str(f'{num:04d}')
 
 
 def get_card_number():
     num = random.randint(1, 1000000000000)
-    return str(num)
+    return str(f'{num:12d}')
 
 
 class Card(models.Model):
@@ -52,3 +52,6 @@ class Card(models.Model):
         if datetime.today().timestamp() > date.timestamp():
             self.status = 'Просрочена'
             super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['id']
