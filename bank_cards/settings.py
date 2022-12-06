@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-e_nypas%-!2w$#5iz+i%2f75^t%g4fw!fp&q()qo)5eo1vtcui
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'bank-cards.vercel.app']
 
 
 # Application definition
