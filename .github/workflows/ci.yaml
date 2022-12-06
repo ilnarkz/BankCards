@@ -19,6 +19,6 @@ jobs:
       - name: Install dependencies
         run: |
           make install
-      - name: Run linter and tests
+      - name: Run linter
         run: |
           make lint
