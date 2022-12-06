@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'bank_cards.urls'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-f96c.up.railway.app/'
+    'https://bankcards-production.up.railway.app/'
 ]
 
 TEMPLATES = [
