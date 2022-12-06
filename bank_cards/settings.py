@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'True'
+DEBUG = 'False'
 
-ALLOWED_HOSTS = ['https://bankcards-production.up.railway.app/', '*']
+ALLOWED_HOSTS = ['https://web-production-04b6.up.railway.app/', '*']
 
 
 # Application definition
@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'bank_cards.urls'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://bankcards-production.up.railway.app/'
+    'https://web-production-04b6.up.railway.app/'
 ]
 
 TEMPLATES = [
@@ -135,3 +135,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

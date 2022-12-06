@@ -22,17 +22,17 @@ HOW_LONG_CHOICES = [
 
 def get_card_series():
     num = random.randint(1, 10000)
-    return num
+    return str(num)
 
 
 def get_card_number():
     num = random.randint(1, 1000000000000)
-    return num
+    return str(num)
 
 
 class Card(models.Model):
-    card_series = models.IntegerField(default=get_card_series)
-    card_number = models.BigIntegerField(default=get_card_number)
+    card_series = models.CharField(max_length=4, default=get_card_series)
+    card_number = models.CharField(max_length=12, default=get_card_number)
     status = models.CharField(max_length=16, choices=STATUS_CHOICES, default='Активирована')
     created_at = models.DateTimeField(default=timezone.now)
     how_long = models.CharField(max_length=16, choices=HOW_LONG_CHOICES, default='1')
