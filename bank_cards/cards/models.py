@@ -32,7 +32,7 @@ def get_card_number():
 
 class Card(models.Model):
     card_series = models.IntegerField(default=get_card_series)
-    card_number = models.IntegerField(default=get_card_number)
+    card_number = models.BigIntegerField(default=get_card_number)
     status = models.CharField(max_length=16, choices=STATUS_CHOICES, default='Активирована')
     created_at = models.DateTimeField(default=timezone.now)
     how_long = models.CharField(max_length=16, choices=HOW_LONG_CHOICES, default='1')
