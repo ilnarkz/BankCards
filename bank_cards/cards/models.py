@@ -27,7 +27,7 @@ def get_card_series():
 
 def get_card_number():
     num = random.randint(1, 1000000000000)
-    return str(f'{num:12d}')
+    return str(f'{num:012d}')
 
 
 class Card(models.Model):
